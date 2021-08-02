@@ -42,3 +42,19 @@ function convertir(precioDolares){
 
     return precioPesos;
 }
+//1.obtener costo producto
+let pesoPS5=consolas.pesos[0];
+let cantidad=1;
+let costoCasillero=calcularCostoCasillero(pesoPS5,cantidad);
+
+//2.obtener costo prducto+impuestos
+let precioPS5=consolas.precios[0];
+let costoProductoImpuestos=calcularCostoImpuesto(pesoPS5,cantidad);
+
+//3.obtener el total de la compra
+let totalCompra=costoCasillero+costoProductoImpuestos;
+console.log(`El costo total de la compra fue de: $${totalCompra} USD`);
+
+//4.obtener el total de la compra en pesos
+let totalPesos=convertir(totalCompra);
+console.log(`El costo total de la compra en pesos fue de: $${totalPesos} COP`);
